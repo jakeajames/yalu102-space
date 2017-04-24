@@ -8,8 +8,13 @@ A nice UI, more features (and more soon).
 Includes: 
 
 -The ability to enable or disable Substrate, the ability to reinstall Cydia if you messed up
+-The HDMI fix that Luca added into his Github but not on the compiled version
+-SSH is enabled via wifi by default (requires Reinstall Cydia (for now)(don't recommend doing that (will remove all the tweaks))
 
--Will include: The ability to automatically add the nonce to the nvram (as you requested to Lofty)
+-Will include: 
+
+-The ability to automatically add the nonce to the nvram (as you requested to Lofty)
+-A way to enable wifi SSHing the good way
 
 SCREENSHOTS: http://m.imgur.com/qbqHAtV,b6A2bCL,KAg9ZeB
 
