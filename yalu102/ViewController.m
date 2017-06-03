@@ -33,11 +33,6 @@ typedef struct {
 @implementation ViewController
 NSUserDefaults *defaults;
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.image.contentMode = UIViewContentModeScaleAspectFill;
@@ -104,7 +99,7 @@ char dt[128];
         NSLog(@"Do some work");
     
 
-    mach_port_t vch = 0;
+     mach_port_t vch = 0;
     
     mach_voucher_attr_recipe_data_t *data = malloc(sizeof(mach_voucher_attr_recipe_data_t) + 0x10);
     data->content_size = 0;
@@ -352,6 +347,7 @@ gotclock:;
     
     void exploit(void*, mach_port_t, uint64_t, uint64_t);
     exploit(sender, pt, kernel_base, allproc_offset);
+     
     [dope setEnabled:NO];
    [dope setImage:[UIImage imageNamed:@"jbkn"] forState:UIControlStateDisabled];
         });

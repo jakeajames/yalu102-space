@@ -103,42 +103,6 @@
             </objects>
             <point key="canvasLocation" x="325.78125" y="154.6875"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NAU-xT-cd4">
-            <objects>
-                <viewController id="fRF-SJ-llq" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="F6Y-Gr-Jor"/>
-                        <viewControllerLayoutGuide type="bottom" id="t8Z-0o-zOH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5Yd-MW-2h7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Increasing vnode limit may help with stability issues on the Yalu jailbreak. EXPERIMENTAL feature!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kLX-v5-f8d">
-                                <rect key="frame" x="16" y="65" width="288" height="71"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kLX-v5-f8d" firstAttribute="trailing" secondItem="5Yd-MW-2h7" secondAttribute="trailingMargin" id="EHX-C0-Otx"/>
-                            <constraint firstItem="kLX-v5-f8d" firstAttribute="leading" secondItem="5Yd-MW-2h7" secondAttribute="leadingMargin" id="ZMD-ij-K5O"/>
-                            <constraint firstItem="kLX-v5-f8d" firstAttribute="centerY" secondItem="5Yd-MW-2h7" secondAttribute="centerY" id="yKw-PL-Ubm"/>
-                            <constraint firstItem="t8Z-0o-zOH" firstAttribute="top" secondItem="kLX-v5-f8d" secondAttribute="bottom" constant="64" id="zNl-6v-e9z"/>
-                        </constraints>
-                    </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="200"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="200"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rXe-Cc-Fbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1089.5999999999999" y="-555.02248875562225"/>
-        </scene>
         <!--Settings Controller-->
         <scene sceneID="3m3-sh-Sop">
             <objects>
@@ -246,9 +210,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fRF-SJ-llq" kind="popoverPresentation" identifier="PopOversegue" popoverAnchorView="9jN-0c-qki" id="8g0-8K-mtV">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="info:" destination="9lo-z5-A5z" eventType="touchUpInside" id="2Vm-8t-o4d"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elO-iC-eiH">
@@ -359,8 +321,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 10.0 - 10.2 (64bit only!)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJe-mb-rTU">
-                                <rect key="frame" x="83" y="592" width="209" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 10.0 - 10.2 (64bit pre-iPhone 7 only!)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJe-mb-rTU">
+                                <rect key="frame" x="31" y="592" width="312" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
