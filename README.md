@@ -4,9 +4,9 @@
 
 A jailbreak for 10.0-10.2 pre-iPhone 7 64bit
 
-Credits:
-- ![Luca Todesco](@qwertyoruiop) - jailbreak
-- ![Marco Grassi](@marcograss) - jailbreak help
+## Credits:
+- ![Luca Todesco](http://twitter.com/@qwertyoruiop) - jailbreak
+- ![Marco Grassi](http://twitter.com/@marcograss) - jailbreak help
 - Ian Beer - mach voucher exploit (extra_recipe)
 
 ## Supported Devices and iOS versions
