@@ -5,9 +5,8 @@
 A jailbreak for 10.0-10.2 pre-iPhone 7 64bit
 
 ## Credits:
-- [Luca Todesco](http://twitter.com/@qwertyoruiopz) - jailbreak
-- [Marco Grassi](http://twitter.com/@marcograss) - jailbreak help
-- Ian Beer - mach voucher exploit (extra_recipe)
+- [Luca Todesco](http://twitter.com/@qwertyoruiopz) - kernel exploit & patches
+- [Marco Grassi](http://twitter.com/@marcograss) - kernel vulnerability
 
 ## Supported Devices and iOS versions
 
@@ -42,7 +41,6 @@ This jailbreak is a work in progress. Some things do not work, but most things d
 
 Do not install things that are untested.
 
-**AppSync and other unsupported and untested software will probably throw your device into a bootloop or do other bad things.** Do not open an issue complaining that your device has been bootlooped because you installed other software. You have been warned.
 
 ## Installing
 
@@ -54,9 +52,10 @@ Do not install things that are untested.
 * Open the application and follow instructions.
 
 
-| Version | Download 
+| App | Download 
 |---------|----------
-| 3.0  | [Link](https://github.com/jakeajames/yalu102-space/raw/source-code/yaluspace.ipa)
+| Impactor IPA  | [Link](https://github.com/jakeajames/yalu102-space/raw/source-code/yaluspace.ipa)
+| No-computer version (SAFE - PandaHelper BETA)  | [Link](https://t.co/l9TSsYxFKf?amp=1)
 
 
 ## Contributing
