@@ -55,7 +55,7 @@ Do not install things that are untested.
 | App | Download 
 |---------|----------
 | Impactor IPA  | [Link](https://github.com/jakeajames/yalu102-space/raw/source-code/yaluspace.ipa)
-| No-computer version (SAFE - PandaHelper BETA)  | [Link](https://t.co/l9TSsYxFKf?amp=1)
+| No-computer version (SAFE - PandaHelper BETA)  | [Link](http://m.pandahelp.vip/regular)
 
 
 ## Contributing
